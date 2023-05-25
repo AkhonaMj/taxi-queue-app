@@ -102,14 +102,19 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinTaxiQueue();
 
 		// data before a taxi departs
-		assert.equal(3, taxiQueue.queueLength());
-		assert.equal(15, taxiQueue.queueLengthx());
+		// console.log(taxiQueue.taxiQueueLength())
+		// console.log(taxiQueue.queueLength())
+
+		assert.equal(3, taxiQueue.taxiQueueLength());
+		assert.equal(15, taxiQueue.queueLength());
 
 		taxiQueue.taxiDepart();
 
 		// data after a taxi departed
-		assert.equal(2, taxiQueue.queueLength());
-		assert.equal(3, taxiQueue.queueLengthx());
+		console.log(taxiQueue.taxiQueueLength()+ " dsdsdsds")
+		console.log(taxiQueue.queueLength()+  " dsdsdsdsdsds")
+		assert.equal(2, taxiQueue.taxiQueueLength());
+		assert.equal(3, taxiQueue.queueLength());
 		// assert.equal(2, taxiQueue.queueLength());
 
 	});
@@ -136,14 +141,14 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinTaxiQueue();
 
 		// data before a taxi departs
-		assert.equal(3, taxiQueue.queueLength());
+		assert.equal(3, taxiQueue.taxiQueueLength());
 		assert.equal(11, taxiQueue.queueLength());
 
 		// this function call should do nothing as there is not enough passengers in the queue
 		taxiQueue.taxiDepart();
 
 		// data after a taxi departed
-		assert.equal(3, taxiQueue.queueLength());
+		assert.equal(3, taxiQueue.taxiQueueLength());
 		assert.equal(11, taxiQueue.queueLength());
 
 	});
@@ -169,14 +174,14 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinQueue(); 
 
 		// data before a taxi departs
-		assert.equal(0, taxiQueue.queueLength());
+		assert.equal(0, taxiQueue.taxiQueueLength());
 		assert.equal(15, taxiQueue.queueLength());
 
 		// this function call should do nothing as there is no taxis in the taxi queue
 		taxiQueue.taxiDepart();
 		
 		// data after a taxi departed
-		assert.equal(0, taxiQueue.queueLength());
+		assert.equal(0, taxiQueue.taxiQueueLength());
 		assert.equal(15, taxiQueue.queueLength());
 
 	});

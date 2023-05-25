@@ -1,41 +1,38 @@
 function TaxiQueue() {
-  var passangers = [];
-  var taxi = [];
   var passengerCounter = 0;
   var taxiCounter = 0;
 
-  function joinQueue(people) {
-    passangers.push(people);
+  function joinQueue() {
     passengerCounter++;
   }
 
-  function leaveQueue(people) {
-		passangers.pop(people);
-		passengerCounter--
-
+  function leaveQueue() {
+    if (passengerCounter > 0) {
+      passengerCounter--;
+    }
 
   }
 
-  function joinTaxiQueue(taxis) {
-	taxi.push(taxis)
+  function joinTaxiQueue() {
     taxiCounter++;
   }
 
   function queueLength() {
-
-    return passangers.length;
+    return passengerCounter;
   }
 
   function taxiQueueLength() {
-    return taxi.length;
+    return taxiCounter;
   }
 
   function taxiDepart() {
-   if(queueLength() == 12){
-	   taxiCounter--;
-   }
+    if (passengerCounter >= 12 && taxiCounter > 0) {
+      passengerCounter -= 12;
+      taxiCounter--;
+    }else {
+
     }
-  
+  }
 
   return {
     joinQueue,
