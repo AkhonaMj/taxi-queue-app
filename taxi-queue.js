@@ -16,12 +16,13 @@ function TaxiQueue() {
 
   }
 
-  function joinTaxiQueue(taxies) {
-	taxi.push(taxies)
+  function joinTaxiQueue(taxis) {
+	taxi.push(taxis)
     taxiCounter++;
   }
 
   function queueLength() {
+
     return passangers.length;
   }
 
@@ -30,7 +31,7 @@ function TaxiQueue() {
   }
 
   function taxiDepart() {
-   if(passangers.length >= 12){
+   if(queueLength() == 12){
 	   taxiCounter--;
    }
     }
