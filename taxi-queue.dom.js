@@ -49,7 +49,6 @@ taxiDepartBtn.addEventListener("click", function(){
   localStorage["taxis"] = taxiQueue.taxiQueueLength();
 localStorage["passengers"] = taxiQueue.queueLength();
 
-
   taxiCount.innerHTML = taxiQueue.taxiQueueLength();
   passengerCount.innerHTML = taxiQueue.queueLength();
 
